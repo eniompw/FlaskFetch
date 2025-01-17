@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Flask App</title>
+</head>
+<body>
+    <h1>Simple Flask Demo</h1>
+    <button onclick="sayHello()">Say Hello</button>
+    <p id="message"></p>
+
+    <script>
+        function sayHello() {
+            fetch('/hello')
+                .then(response => response.text())
+                .then(text => document.getElementById('message').textContent = text);
+        }
+    </script>
+</body>
+</html> 

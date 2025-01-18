@@ -45,6 +45,35 @@ A minimal example showing how to use the Fetch API with Flask. This demo shows h
 - Uses the Fetch API to make a request to `/hello`
 - Displays the server's response in a paragraph element
 
+The JavaScript code can be written in two equivalent ways. Here's the traditional function notation with detailed comments:
+```javascript
+function sayHello() {
+    fetch('/hello')                          // Makes GET request to /hello endpoint
+        .then(function(response) {           // Handles the response
+            return response.text();          // Converts response to text
+        })
+        .then(function(text) {              // Handles the text
+            document.getElementById('message').textContent = text;  // Updates page
+        });
+}
+```
+
+And here's the same code using modern arrow function notation, which is more concise:
+```javascript
+function sayHello() {
+    fetch('/hello')                          // Makes GET request to /hello endpoint
+        .then(response => response.text())    // Arrow function to handle response
+        .then(text => document.getElementById('message').textContent = text);  // Arrow function to update page
+}
+```
+
+Both versions do exactly the same thing:
+1. Makes a GET request to the `/hello` endpoint
+2. Converts the response to text
+3. Updates the page by setting the text content of the element with id="message"
+
+The arrow function notation (`=>`) is a shorter way to write functions in JavaScript. It's particularly useful for short callback functions like these. The two notations are equivalent, but arrow functions are more commonly used in modern JavaScript.
+
 ## Learning Points
 
 - Basic Flask route setup
